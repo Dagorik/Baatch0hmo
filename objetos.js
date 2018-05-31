@@ -12,9 +12,17 @@ class Perro{
     ladrar(){
         console.log(this.raza +  " esta ladrando")
     }
+
+    getColor(){
+        return this.color
+    }
+    setColor(nuevoColor){
+        this.color = nuevoColor
+    }
 }
 
 var fido = new Perro("Negro","Largo","Pug","Chiquito")
 var firulais = new Perro("Blanco","Corto","Dalmata","Grande")
-firulais.ladrar()
-fido.ladrar()
+console.log(firulais.getColor())
+firulais.setColor('Cafe')
+console.log(firulais.getColor())
