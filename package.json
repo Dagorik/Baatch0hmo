@@ -1,0 +1,23 @@
+{
+  "name": "batch0hmo",
+  "version": "0.0.1",
+  "description": "Batch 0 cinta roja hermosillo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dagorik/Baatch0hmo.git"
+  },
+  "author": "Devf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dagorik/Baatch0hmo/issues"
+  },
+  "homepage": "https://github.com/Dagorik/Baatch0hmo#readme",
+  "dependencies": {
+    "@google/maps": "^0.4.6",
+    "request": "^2.87.0"
+  }
+}
