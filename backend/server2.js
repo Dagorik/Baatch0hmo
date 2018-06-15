@@ -30,6 +30,35 @@ app.get('/api/v1/alumnos',(req,res)=>{
     })
 })
 
+//Obtener el alumno por ID
+app.get('/api/v1/alumnos/:uid',(req,res)=>{
+    const {uid} = req.params
+    Alumno.findById(uid).exec().then(alumno =>{
+        res.send(alumno)
+    }).catch(err =>{
+        res.status(404).send(err)
+    })
+});
+
+app.delete('/api/v1/alumnos/:uid',(req,res)=>{
+    const {uid} = req.params
+    Alumno.findByIdAndRemove(uid).exec().then(alumno =>{
+        res.status(204).send()
+    }).catch(err =>{
+        res.status(404).send(err)
+    })
+});
+
+app.put('/api/v1/alumnos/:uid',(req,res)=>{
+    const {uid} = req.params
+    Alumno.findByIdAndUpdate(uid,{$set:req.body},{new:true}).exec().then(alumno =>{
+        res.send(alumno)
+    }).catch(err =>{
+        res.send(err)
+    })
+});
+
+
 app.listen(3000,()=>{
     console.log('Server on 3000')
 });
