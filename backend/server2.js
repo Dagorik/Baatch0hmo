@@ -4,8 +4,14 @@ const bodyParser = require('body-parser');
 
 const Alumno = require('./mongooseClient')
 
+const PORT = process.env.PORT || 3000
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.get('/',(req,res)=>{
+    res.send("Arriba")
+})
 
 //Crear estudiantes
 app.post('/api/v1/user/create',(req,res)=>{
@@ -59,6 +65,6 @@ app.put('/api/v1/alumnos/:uid',(req,res)=>{
 });
 
 
-app.listen(3000,()=>{
-    console.log('Server on 3000')
+app.listen(PORT,()=>{
+    console.log('Server on '+PORT)
 });
