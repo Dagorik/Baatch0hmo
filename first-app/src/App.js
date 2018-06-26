@@ -5,7 +5,9 @@ import Saludo from './components/Saludo';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
 import Footer from './components/Footer'
+import Register from './components/Register'
 import axios from 'axios'
+import {BrowserRouter, Route} from 'react-router-dom'
 
 class App extends Component {
   constructor(){
@@ -71,13 +73,24 @@ cambiarEstado = (e) =>{
     console.log('Me ejecute render')
     console.log(this.state)
     return (
-      <div className="App">
-        <Navbar/>
-        <Saludo texto = {this.state.numero}/>
-        <button onClick={this.cambiarEstado}>Buton</button>
-        {/* {this.updateComponent()} */}
-        {this.updateCardPokemon()}
-      </div>
+      // <div className="App">
+      //   <Navbar/>
+      //   <Saludo texto = {this.state.numero}/>
+      //   <button onClick={this.cambiarEstado}>Buton</button>
+      //   {/* {this.updateComponent()} */}
+      //   {this.updateCardPokemon()}
+      // /div>
+
+      //Para hacer routing
+
+      <BrowserRouter>
+            <main>
+                <Route exact path= "/" component = {Navbar} />
+                <Route exact path= "/login" component = {Card} />
+                <Route exact path= "/register" component = {Register} />
+            </main>
+      </BrowserRouter>
+
     );
   }
 }
